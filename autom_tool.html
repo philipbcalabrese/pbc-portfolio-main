@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Justin Blackburn | Home </title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <nav class="nav">
+            <div class="navbar">
+                <ul class="tabs">
+                    <div class="left-container">
+                        <li class="left">
+                            <a href="index.html">Projects</a>
+                        </li>
+                        <li class="left">
+                            <a href = "https://github.com/justinbdean" target = "_blank">Programming</a>
+                        </li>
+                        <li class="left">
+                            <a href="about_me.html">About Me</a>
+                        </li>
+                    </div>
+                    <div class = "spacer"></div>
+                    <li class="center">
+                        <a href="index.html">Justin Blackburn</a>
+                    </li>
+                    <div class="spacer"></div>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="about_proj">
+        <h2>
+            Custom Instancing Tool
+        </h2>
+    </div>
+    <div class = "proj_software">
+        <h3>
+            Python, Maya
+        </h3>
+        <h3>
+            2024
+        </h3>
+    </div>
+        <p class="proj_text">
+            This project was a part of an independent study course during the spring quarter of 2024. The professor sponsoring my independent study was teaching another course with the goal of the students creating a short film. Their film involved swarms of bug-like robots that were invading Chicago. My professor and I decided a good project would be to learn how to use Python in Maya. Since the artists needed the ability to create swarms, I wrote a script that utilized the Maya library and instanced their objects. I added additional features as we went on that allowed for determined shapes or random placements in a specified area. The last piece of this project was figuring out a region of the bug so that another instanced bug wasn't created in the same area. I focused on working with the artists in the class to meet their needs and build the tool to be as user-friendly as possible. 
+        </p>
+        <p class="proj_text">
+            The main challenge of this project was retaining all the attributes of the bugs being instanced. For simplicity's sake, I ended up retaining all attributes of the original object. I went in this route as none of the artists needed to offset animations or anything of that nature. If that wasn't the case, I would have added a feature to input offset options, either by position or animation timing to create differences in the instanced objects. This is something I am looking to work on at a later point. 
+        </p>
+        <p class="proj_text">           
+            I focused on making this plugin tool simple for the artist to use. Once stored on the Maya shelf, all the artist would need to do is select their object in the outliner, click the tool icon, and input their options for the instancing. I added error handling for cases when an object wasn't selected or if there was just a general error. This gave the artists a streamlined experience where they didn't need to worry about any complicated steps. 
+        </p>
+        <p class="proj_text">
+            This was my first time utilizing my programming skills in a creative application and was a great experience. The script can be found on my Github. 
+        </p>
+    </div>
+
+    <!-- image -->
+    <div class="tool_vid_container">
+        <video class="tool_vid" controls>
+            <source src="/img/bug_vid.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class= "img_container">
+        <div class="gallery_tool">
+            <div class="tool1">
+                <img src="img/Bug_multiply.jpg" class = "gallery__img" alt="Bug_Tool" title="Bug Render">
+            </div>
+            <div class="tool2">
+                <img src="img/bug1.png" class = "gallery__img" alt="Bug_Tool" title="Bug Render">
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- text -->
+    <section class="text">
+        <!-- used class to create class of text -->
+    </section>
+        <!-- section tag to create section to house text -->
+    <section class = "bottom">
+        <li>
+            <div class = "linkedin">
+                <a href = "http://www.linkedin.com/in/justindblackburn" target = "_blank">
+                    <img src="/img/In-White-96@2x.png" alt = "LinkedIn" title="LinkedIn" width="35" height="35">
+                </a>
+            </div>
+        </li>
+        <li>
+            <div class = "mail">
+                <a href="mailto:justin.dblackburn14@gmail.com" title = "Email" >
+                    <img src="/img/icons8-email-100.png" alt = "Email" title = "Email" width = "35", height="35">
+                </a>
+            </div>
+        </li>
+        <li>
+            <div class = "resume">
+                <a href = "misc/Blackburn_Resume_24.pdf" download="Justin_Blackburn_Resume">
+                    <img src="/img/icons8-file-100.png" alt = "Resume" title = "Resume" width = "35", height="35">
+                </a>
+            </div>
+        </li>
+    </section>
+
+    <!-- link script page -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>

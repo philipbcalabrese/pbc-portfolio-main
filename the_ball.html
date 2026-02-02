@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Justin Blackburn | Home </title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <nav class="nav">
+            <div class="navbar">
+                <ul class="tabs">
+                    <div class="left-container">
+                        <li class="left">
+                            <a href="index.html">Projects</a>
+                        </li>
+                        <li class="left">
+                            <a href = "https://github.com/justinbdean" target = "_blank">Programming</a>
+                        </li>
+                        <li class="left">
+                            <a href="about_me.html">About Me</a>
+                        </li>
+                    </div>
+                    <div class = "spacer"></div>
+                    <li class="center">
+                        <a href="index.html">Justin Blackburn</a>
+                    </li>
+                    <div class="spacer"></div>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="about_proj">
+        <h2>
+            Ball & Lights Animation
+        </h2>
+    </div>
+    <div class = "proj_software">
+        <h3>
+            Houdini, VEX, Solaris, Karma
+        </h3>
+        <h3>
+            2024
+        </h3>
+    </div>
+        <p class="proj_text">
+            For this project, I worked alongside two of my peers on a collaborative short film. Our goal was to create a flowing narrative that featured three parts, one made by each of us, that presented changes in each part. We focused more on cinematic techniques and environment features than a complex main character. As a result, we decided to use a sphere that goes through changes through each part. The three of us collaborated throughout the process constructing a cohesive vision and providing feedback to each other's work. Additionally, we focused on thematic structures that could join the portions together. 
+        </p>
+        <p class="proj_text">
+            My biggest source of inspiration was floating candle lanterns. I love the warm glow they create in the dark sky or as a reflection on some surface. I wanted to focus on the reflections for this project as with the tight environment we would get a change from before and after.  
+        </p>
+        <p class="proj_text">
+            The biggest hurdle was the lights themselves. There are over 200 light bulbs within the narrow hallway. This presented two hurdles: how to give some 'character' to the individual bulbs, and how to not destroy my rendering times. For the first part, I knew addressing this through a VEX node would be the best solution. I took the positional value of each point that the light bulb was attached to and tied them to a sin wave to create a wave effect. As the frames would move forward, the bulbs would move along the wave. Eventually, I would like to come back and make this effect a bit stronger so that the wave is more noticeable. I didn't want to take too much attention away from the ball itself so I limited how large the peaks and valleys were. I think making this effect more extreme would create a more interesting image. Additionally, I would like to add a functionality where the points of the bulbs react the the position of the ball itself. Maybe they get pulled down closer wherever the ball is. For the next part, I was able to utilize the new light instancing feature in Houdini. This proved to work perfectly as I would get all the benefits of having that many lights but without the dramatic resource increase. I created a point cloud from a grid which would be the points that the bulb would be instanced onto. This proved to be most efficient as I was able to get rendering times down to about 3 minutes on my computer setup. I would like to go back and dive more into the instancing feature within Houdini and see if there is a way for me to make this more efficient or to have more control over the instancing process. 
+        </p>
+        <p class="proj_text">
+            While this project was more of an artistic one, I was still able to employ some technical skills through my use of VEX. This was a really rewarding project as I was able to be technical and creative to get a nice final result. My portion of the film, found below, is the first 5 shots which is about 45 seconds.
+        </p>
+    </div>
+
+    <!-- image -->
+    <div style="padding:45% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1034619271?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="The Ball"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+    <div class= "img_container">
+        <div class="gallery_ue">
+            <div class="ue1">
+                <img src="img/Ball3.jpg" class = "gallery__img" alt="Ball" title="Ball">
+            </div>
+            <div class="ue2">
+                <img src="img/Ball4.jpg" class = "gallery__img" alt="Ball" title="Ball">
+            </div>
+            <div class="ue3">
+                <img src="img/Ball2.png" class = "gallery__img" alt="Ball" title="Ball">
+            </div>
+        </div>
+        <div class="gallery_ue2">
+            <div class="ue4">
+                <img src="img/Ball5.png" class = "gallery__img" alt="Ball" title="Ball">
+            </div>
+            <div class="ue5">
+                <img src="img/Ball6.png" class = "gallery__img" alt="Ball" title="Ball">
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- text -->
+    <section class="text">
+        <!-- used class to create class of text -->
+    </section>
+        <!-- section tag to create section to house text -->
+    <section class = "bottom">
+        <li>
+            <div class = "linkedin">
+                <a href = "http://www.linkedin.com/in/justindblackburn" target = "_blank">
+                    <img src="/img/In-White-96@2x.png" alt = "LinkedIn" title="LinkedIn" width="35" height="35">
+                </a>
+            </div>
+        </li>
+        <li>
+            <div class = "mail">
+                <a href="mailto:justin.dblackburn14@gmail.com" title = "Email" >
+                    <img src="/img/icons8-email-100.png" alt = "Email" title = "Email" width = "35", height="35">
+                </a>
+            </div>
+        </li>
+        <li>
+            <div class = "resume">
+                <a href = "misc/Blackburn_Resume_24.pdf" download="Justin_Blackburn_Resume">
+                    <img src="/img/icons8-file-100.png" alt = "Resume" title = "Resume" width = "35", height="35">
+                </a>
+            </div>
+        </li>
+    </section>
+
+    <!-- link script page -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
