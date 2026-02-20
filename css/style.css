@@ -1,9 +1,20 @@
 /* header */
 header {
-    height: 150px;
-    padding-top: 20px;
+padding: 60px 20px 40px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
 }
-
+.main-name {
+font-size: clamp(32px, 6vw, 80px);
+    text-align: center;
+    font-family: serif;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    display: block;
+}
 a {
     text-decoration: none;
     color: rgb(255, 255, 255);
@@ -16,43 +27,6 @@ a:hover{
     font-weight: bold;
 }
 
-.tabs {
-    display: flex;
-    justify-content: space-between;
-    list-style-type: none;
-    font-family: serif, sans-serif;
-    align-items: center;
-    padding-left: 1em;
-}
-
-.tabs .left-container {
-    display: flex;
-}
-
-.tabs li {
-    cursor: pointer;
-    padding: 10px 10px 10px 10px ;
-    text-transform: uppercase;
-    font-size: 1.3vw;
-}
-
-.tabs li.left {
-    text-align: center;
-}
-
-.tabs li.center {
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 3vw;
-}
-
-.tabs .spacer {
-    flex-grow: 1;
-}
-
-
 title {
     text-align: center;
 }
@@ -62,13 +36,69 @@ title {
     padding-top: 2em;
 }
 
+/* --- Subpage Header Styling --- */
+.subpage-header {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column; /* Stacks Name over Tabs */
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Optional: subtle line separator */
+}
+
+/* Reusing the main-name style for consistency */
+.subpage-header .main-name {
+    font-size: clamp(24px, 5vw, 60px); 
+    text-align: center;
+    font-family: serif;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Horizontal Tabs for Subpages */
+.sub-tabs {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px; /* Space between links */
+}
+
+.sub-tabs li a {
+    font-size: clamp(14px, 1.2vw, 20px);
+    font-family: serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    transition: font-weight 0.2s;
+}
+
+.sub-tabs li a:hover {
+    font-weight: bold;
+}
+
+/* Responsive adjustment for Portrait/Mobile */
+@media (max-width: 600px) {
+    .sub-tabs {
+        flex-direction: column; /* Stacks links vertically on phones */
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .subpage-header .main-name {
+        font-size: 8vw;
+    }
+}
 /* Main*/
 
 body {
     
     background-color: rgb(22, 21, 21);
     color: rgb(255, 255, 255);
-    padding-bottom: 2.5rem;
+    margin: 0;
+    padding: 0;
     
 }
 
@@ -101,6 +131,13 @@ p {
     color: white;
     font-size: 20px;
     padding-bottom: 2em;
+    /* This overrides the 25% padding from the 'p' tag */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    /* This centers the text */
+    text-align: center;
+    width: 100%;
+    display: block;
 }
 .email { 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -129,353 +166,200 @@ p {
     margin-bottom: 15px;
 }
 
-/* images */
-
 .gallery {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 10px;
-    width: 98%;
-    max-width: none;
-    padding-left: 1em;
-    padding-right: 1em;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 40px; 
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 20px;
 }
 
-.gallery_tool {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 10px;
-    width: 98%;
-    max-width: none;
-    padding-left: 1em;
-    padding-right: 1em;
+/* --- The Unit (Link tied to Image) --- */
+.gallery__unit {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
 }
 
-.gallery_ue {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 10px;
-    width: 98%;
-    max-width: none;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-bottom: 3em;
+.tab-label {
+    font-size: clamp(18px, 1.8vw, 26px);
+    font-family: serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 15px; 
+    transition: font-weight 0.2s, color 0.2s;
 }
 
-.gallery_ue2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 10px;
-    width: 98%;
-    max-width: none;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-bottom: 3em;
+.tab-label:hover {
+    font-weight: bold;
+    color: #ccc; /* Subtle color shift on the text label */
 }
 
-
-.gallery_vp {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
-    width: 98%;
-    max-width: none;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-bottom: 3em;
-}
-
-.gallery_flower {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
-    width: 98%;
-    max-width: none;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-bottom: 3em;
-}
-
-.gallery_wine {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 10px;
-    width: 98%;
-    max-width: none;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-bottom: 3em;
-}
-
-.gallery_tool {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 10px;
-    width: 98%;
-    max-width: none;
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
-.wine1 {
-    grid-column-start: 1;
-    grid-column-end: 1;
-    grid-row-start: 1;
-    grid-row-end: 1;
+/* --- Image Container Styling --- */
+.gallery__item {
     position: relative;
-    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 2 / 3; 
+    overflow: hidden; /* Clips the zoom effect */
+    background-color: black; 
 }
-
-.wine3 {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    position: relative;
-    overflow: hidden;
-}
-
-.wine4 {
-    grid-column-start: 3;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    position: relative;
-    overflow: hidden;
-}
-
 
 .gallery__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-} 
-
-.tool1 {
-    grid-column-start: 1;
-    grid-column-end: 1;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    display: flex;
-    justify-content: self;
-    padding: 2rem;
+    /* transition: transform and opacity for the subtle zoom effect */
+    transition: transform 0.5s ease, opacity 0.3s ease; 
 }
 
-.tool2 {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-}
-
-.tool_vid_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.tool_vid {
-    position:relative;
-    justify-content: center;
-    width: 75%;
-    
-}
-
-.video {
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-}
-
-
+/* --- The Overlay (Text inside the image) --- */
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+    background-color: rgba(0, 0, 0, 0.2); /* Slight darkening */
     color: white;
     font-family: serif;
-    font-size: 20px;
+    font-size: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    pointer-events: none; /* Prevent overlay from blocking hover */
+    opacity: 0; 
+    pointer-events: none; 
     transition: opacity 0.3s ease;
+    z-index: 2;
 }
 
-.gallery__item--1 {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    position: relative;
-    overflow: hidden;
+/* --- Hover Effects --- */
+.gallery__item:hover .gallery__img {
+    opacity: 0.4; 
+    transform: scale(1.1); /* The subtle zoom */
 }
 
-.gallery__item--1 img {
-    transition: opacity 0.3s ease;
+.gallery__item:hover .overlay {
+    opacity: 1; 
 }
 
-.gallery__item--1:hover img {
-    opacity: .3;
+/* --- Responsiveness --- */
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2x2 on tablets */
+    }
 }
 
-.gallery__item--1:hover .overlay {
-    opacity: 1;
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr; /* Single column stack for portrait */
+        width: 80%;
+    }
+    
+    .main-name {
+        font-size: 10vw;
+    }
 }
 
-.gallery__item--2 {
-    grid-column-start: 3;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    position: relative;
-    overflow: hidden;
+.resume-container {
+    text-align: center;
+    padding: 20px 0;
+}
+.resume-img {
+    max-width: 800px; /* Adjust based on your preference */
+    width: 90%;
+    height: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.gallery__item--2 img {
-    transition: opacity 0.3s ease;
+.headshot-gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6-column base for maximum flexibility */
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
 }
 
-.gallery__item--2:hover img {
-    opacity: .3;
+.headshot-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.gallery__item--2:hover .overlay {
-    opacity: 1;
+.headshot-item:hover img {
+    transform: scale(1.02);
 }
 
-.gallery__item--3 {
-    grid-column-start: 5;
-    grid-column-end: 7;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    position: relative;
-    overflow: hidden;
+/* Specific logic for 5 images to look balanced */
+/* Top Row: 3 images taking 2 columns each */
+.headshot-item:nth-child(1),
+.headshot-item:nth-child(2),
+.headshot-item:nth-child(3) {
+    grid-column: span 2;
 }
 
-.gallery__item--3 img {
-    transition: opacity 0.3s ease;
+/* Bottom Row: 2 images taking 3 columns each */
+.headshot-item:nth-child(4),
+.headshot-item:nth-child(5) {
+    grid-column: span 3;
 }
 
-.gallery__item--3:hover img {
-    opacity: .3;
+/* --- Responsive Adjustments --- */
+
+/* Tablet: 2x2 grid, with the 5th image centered at the bottom */
+@media (max-width: 900px) {
+    .headshot-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .headshot-item:nth-child(n) {
+        grid-column: span 1; /* Reset spans */
+    }
+    .headshot-item:nth-child(5) {
+        grid-column: span 2; /* Make the last one wide to fill the row */
+    }
 }
 
-.gallery__item--3:hover .overlay {
-    opacity: 1;
+/* Mobile: Single column stack */
+@media (max-width: 600px) {
+    .headshot-gallery {
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+    .headshot-item:nth-child(5) {
+        grid-column: span 1;
+    }
 }
-.gallery__item--4 {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    grid-row-end: 5;
-    position: relative;
-    overflow: hidden;
-}
-
-.gallery__item--4 img {
-    transition: opacity 0.3s ease;
-}
-
-.gallery__item--4:hover img {
-    opacity: .3;
-}
-
-.gallery__item--4:hover .overlay {
-    opacity: 1;
-}
-
-.gallery__item--5 {
-    grid-column-start: 3;
-    grid-column-end: 5;
-    grid-row-start: 3;
-    grid-row-end: 5;
-    position: relative;
-    overflow: hidden;
-}
-
-.gallery__item--5 img {
-    transition: opacity 0.3s ease;
-}
-
-.gallery__item--5:hover img {
-    opacity: .3;
-}
-
-.gallery__item--5:hover .overlay {
-    opacity: 1;
-}
-
-.gallery__item--6 {
-    grid-column-start: 5;
-    grid-column-end: 7;
-    grid-row-start: 3;
-    grid-row-end: 5;
-    position: relative;
-    overflow: hidden;
-}
-
-.gallery__item--6 img {
-    transition: opacity 0.3s ease;
-}
-
-.gallery__item--6:hover img {
-    opacity: .3;
-}
-
-.gallery__item--6:hover .overlay {
-    opacity: 1;
-}
-
-
 
 /*Footer*/
 
 #footer {
-    position: absolute;
-    bottom: 0;
     width: 100%;
-    height: 2.5rem;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .bottom {
     display: flex;
     list-style-type: none;
-    font-size: 20px;
-    font-family: serif ;
-    align-items: center;
-    padding-left: 1em;
-    text-align: center;
-    padding-top: 4em;
-    padding: center;
+    padding: 0;
+    margin: 0;
     justify-content: center;
-    bottom: 0;
+    align-items: center;
 }
 
-.linkedin{
-    padding: 7px;
+.youtube, .mail, .instagram {
+    padding: 0 10px; /* Horizontal spacing only */
 }
 
-.mail {
-    padding: 7px;
-}
-
-.resume {
-    padding: 7px;
+/* Fix for the stray bracket at the end of your file */
+@media (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
