@@ -1,0 +1,365 @@
+/* header */
+header {
+padding: 60px 20px 40px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.main-name {
+font-size: clamp(32px, 6vw, 80px);
+    text-align: center;
+    font-family: serif;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    display: block;
+}
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+a:visited{
+    text-decoration: none;
+}
+
+a:hover{
+    font-weight: bold;
+}
+
+title {
+    text-align: center;
+}
+
+
+.navbar {
+    padding-top: 2em;
+}
+
+/* --- Subpage Header Styling --- */
+.subpage-header {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column; /* Stacks Name over Tabs */
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Optional: subtle line separator */
+}
+
+/* Reusing the main-name style for consistency */
+.subpage-header .main-name {
+    font-size: clamp(24px, 5vw, 60px); 
+    text-align: center;
+    font-family: serif;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Horizontal Tabs for Subpages */
+.sub-tabs {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px; /* Space between links */
+}
+
+.sub-tabs li a {
+    font-size: clamp(14px, 1.2vw, 20px);
+    font-family: serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    transition: font-weight 0.2s;
+}
+
+.sub-tabs li a:hover {
+    font-weight: bold;
+}
+
+/* Responsive adjustment for Portrait/Mobile */
+@media (max-width: 600px) {
+    .sub-tabs {
+        flex-direction: column; /* Stacks links vertically on phones */
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .subpage-header .main-name {
+        font-size: 8vw;
+    }
+}
+/* Main*/
+
+body {
+    
+    background-color: rgb(22, 21, 21);
+    color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+    
+}
+
+h2 {
+    text-align: center;
+    font-family:serif;
+    font-weight: normal;
+}
+
+p {
+    font-size: 25px;
+    font-family: serif;
+    margin: 0;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 5px;
+    padding-bottom: 2em;
+    text-align: left;
+}
+
+
+.me {
+    font-size: 25px;
+    padding-top: 15px;
+    margin-bottom: 1em;
+    padding-bottom: 15px;
+}
+
+.me-text {
+    color: white;
+    font-size: 20px;
+    padding-bottom: 2em;
+    /* This overrides the 25% padding from the 'p' tag */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    /* This centers the text */
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+.email { 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: gray;
+    font-weight: bold;
+}
+
+.about_proj {
+    font-size: 30px;
+}
+
+.proj_text {
+    font-weight: normal;
+    font-size: 25px;
+    margin: 10px;
+    margin-top: 10px;
+    padding-top: 40px;
+    text-align: left;
+}
+
+.proj_software {
+    font-size: 15px;
+    text-align: center;
+    font-family: serif;
+    margin: 10px;
+    margin-bottom: 15px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 40px; 
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+/* --- The Unit (Link tied to Image) --- */
+.gallery__unit {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.tab-label {
+    font-size: clamp(18px, 1.8vw, 26px);
+    font-family: serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 15px; 
+    transition: font-weight 0.2s, color 0.2s;
+}
+
+.tab-label:hover {
+    font-weight: bold;
+    color: #ccc; /* Subtle color shift on the text label */
+}
+
+/* --- Image Container Styling --- */
+.gallery__item {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 3; 
+    overflow: hidden; /* Clips the zoom effect */
+    background-color: black; 
+}
+
+.gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* transition: transform and opacity for the subtle zoom effect */
+    transition: transform 0.5s ease, opacity 0.3s ease; 
+}
+
+/* --- The Overlay (Text inside the image) --- */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Slight darkening */
+    color: white;
+    font-family: serif;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+/* --- Hover Effects --- */
+.gallery__item:hover .gallery__img {
+    opacity: 0.4; 
+    transform: scale(1.1); /* The subtle zoom */
+}
+
+.gallery__item:hover .overlay {
+    opacity: 1; 
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2x2 on tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr; /* Single column stack for portrait */
+        width: 80%;
+    }
+    
+    .main-name {
+        font-size: 10vw;
+    }
+}
+
+.resume-container {
+    text-align: center;
+    padding: 20px 0;
+}
+.resume-img {
+    max-width: 800px; /* Adjust based on your preference */
+    width: 90%;
+    height: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.headshot-gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6-column base for maximum flexibility */
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.headshot-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.headshot-item:hover img {
+    transform: scale(1.02);
+}
+
+/* Specific logic for 5 images to look balanced */
+/* Top Row: 3 images taking 2 columns each */
+.headshot-item:nth-child(1),
+.headshot-item:nth-child(2),
+.headshot-item:nth-child(3) {
+    grid-column: span 2;
+}
+
+/* Bottom Row: 2 images taking 3 columns each */
+.headshot-item:nth-child(4),
+.headshot-item:nth-child(5) {
+    grid-column: span 3;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Tablet: 2x2 grid, with the 5th image centered at the bottom */
+@media (max-width: 900px) {
+    .headshot-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .headshot-item:nth-child(n) {
+        grid-column: span 1; /* Reset spans */
+    }
+    .headshot-item:nth-child(5) {
+        grid-column: span 2; /* Make the last one wide to fill the row */
+    }
+}
+
+/* Mobile: Single column stack */
+@media (max-width: 600px) {
+    .headshot-gallery {
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+    .headshot-item:nth-child(5) {
+        grid-column: span 1;
+    }
+}
+
+/*Footer*/
+
+#footer {
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.bottom {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.youtube, .mail, .instagram {
+    padding: 0 10px; /* Horizontal spacing only */
+}
+
+/* Fix for the stray bracket at the end of your file */
+@media (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
